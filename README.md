@@ -93,11 +93,10 @@ The corresponding JSON file would be:
   "argument_2"  : "value",
   "..."         : "...",
   "image"       : "filename"
-  },
-  "DISCARD"     : "boolean",
+  }
 }
 ```
-For instance, to select a region of rectangle `create_region`:
+For instance, to create a region of rectangle `create_region`:
 >`create_region -rect -coord_1 -coord_2 ... -image`
 
 ```json
@@ -109,8 +108,7 @@ For instance, to select a region of rectangle `create_region`:
   "coord_2" : "value",      
   "..."     : "...",
   "image_id": "id for an image"
-  },
-  "DISCARD" : false
+  }
 }
 ```
 * Coordinates (like `coord_1`) will be specific to the shape to identify the region. For rectangle, two diagonal coordinates would be enough.
@@ -118,6 +116,11 @@ For instance, to select a region of rectangle `create_region`:
 * Then we can also have `select_region -name -image` to focus on a particular region of interest.
 
 #### Possible Issue
-* ~~Do we need to send multiple commands in one json file?~~
-  * ~~Though json accepts duplicate key names, it would only parse the last one. If multiple commands with same name are sent in one json object, we probably need to put "commands" into a queue or list.~~
+* Do we need to send multiple commands in one json file?
+  * Though json accepts duplicate key names, it would only parse the last one. If multiple commands with same name are sent in one json object, we probably need to put "commands" into a queue or list.
   * Put command objects in list or array when sending multiple commands in one json file.
+* How to manage multiple users/clients? The server needs to know the source of the command?
+* How would user create scripts to execute sequence of commands?
+    * How will the client/server receive the script file user created?
+    * How to output the results to a file?
+    * Involves File I/O.
