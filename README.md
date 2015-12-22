@@ -118,5 +118,5 @@ For instance, to select a region of rectangle `create_region`:
 * Then we can also have `select_region -name -image` to focus on a particular region of interest.
 
 #### Possible Issue
-* Do we need to send multiple commands in one json file? 
+* ~~Do we need to send multiple commands in one json file?~~
   * Though json accepts duplicate key names, it would only parse the last one. If multiple commands with same name are sent in one json object, we probably need to put "commands" into a queue or list.
