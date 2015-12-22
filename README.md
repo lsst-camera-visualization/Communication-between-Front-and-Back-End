@@ -119,4 +119,5 @@ For instance, to select a region of rectangle `create_region`:
 
 #### Possible Issue
 * ~~Do we need to send multiple commands in one json file?~~
-  * Though json accepts duplicate key names, it would only parse the last one. If multiple commands with same name are sent in one json object, we probably need to put "commands" into a queue or list.
+  * ~~Though json accepts duplicate key names, it would only parse the last one. If multiple commands with same name are sent in one json object, we probably need to put "commands" into a queue or list.~~
+  * Put command objects in list or array when sending multiple commands in one json file.
